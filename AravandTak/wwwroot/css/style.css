@@ -51,66 +51,66 @@ a:hover {
     font-family: IRANSans;
     font-style: normal;
     font-weight: 900;
-    src: url('css/fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Black.eot');
-    src: url('css/fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Black.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
-    url('css/fonts/iransans-farsi-numbers/woff2/IRANSansWeb(FaNum)_Black.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
-    url('css/fonts/iransans-farsi-numbers/woff/IRANSansWeb(FaNum)_Black.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url('css/fonts/iransans-farsi-numbers/ttf/IRANSansWeb(FaNum)_Black.ttf') format('truetype');
+    src: url('fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Black.eot');
+    src: url('fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Black.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('fonts/iransans-farsi-numbers/woff2/IRANSansWeb(FaNum)_Black.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('fonts/iransans-farsi-numbers/woff/IRANSansWeb(FaNum)_Black.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('fonts/iransans-farsi-numbers/ttf/IRANSansWeb(FaNum)_Black.ttf') format('truetype');
 }
 
 @font-face {
     font-family: IRANSans;
     font-style: normal;
     font-weight: bold;
-    src: url('css/fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Bold.eot');
-    src: url('css/fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Bold.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
-    url('css/fonts/iransans-farsi-numbers/woff2/IRANSansWeb(FaNum)_Bold.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
-    url('css/fonts/iransans-farsi-numbers/woff/IRANSansWeb(FaNum)_Bold.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url('css/fonts/iransans-farsi-numbers/ttf/IRANSansWeb(FaNum)_Bold.ttf') format('truetype');
+    src: url('fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Bold.eot');
+    src: url('fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Bold.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('fonts/iransans-farsi-numbers/woff2/IRANSansWeb(FaNum)_Bold.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('fonts/iransans-farsi-numbers/woff/IRANSansWeb(FaNum)_Bold.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('fonts/iransans-farsi-numbers/ttf/IRANSansWeb(FaNum)_Bold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: IRANSans;
     font-style: normal;
     font-weight: 500;
-    src: url('css/fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Medium.eot');
-    src: url('css/fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Medium.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
-    url('css/fonts/iransans-farsi-numbers/woff2/IRANSansWeb(FaNum)_Medium.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
-    url('css/fonts/iransans-farsi-numbers/woff/IRANSansWeb(FaNum)_Medium.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url('css/fonts/iransans-farsi-numbers/ttf/IRANSansWeb(FaNum)_Medium.ttf') format('truetype');
+    src: url('fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Medium.eot');
+    src: url('fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Medium.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('fonts/iransans-farsi-numbers/woff2/IRANSansWeb(FaNum)_Medium.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('fonts/iransans-farsi-numbers/woff/IRANSansWeb(FaNum)_Medium.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('fonts/iransans-farsi-numbers/ttf/IRANSansWeb(FaNum)_Medium.ttf') format('truetype');
 }
 
 @font-face {
     font-family: IRANSans;
     font-style: normal;
     font-weight: 300;
-    src: url('css/fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Light.eot');
-    src: url('css/fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Light.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
-    url('css/fonts/iransans-farsi-numbers/woff2/IRANSansWeb(FaNum)_Light.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
-    url('css/fonts/iransans-farsi-numbers/woff/IRANSansWeb(FaNum)_Light.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url('css/fonts/iransans-farsi-numbers/ttf/IRANSansWeb(FaNum)_Light.ttf') format('truetype');
+    src: url('fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Light.eot');
+    src: url('fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_Light.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('fonts/iransans-farsi-numbers/woff2/IRANSansWeb(FaNum)_Light.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('fonts/iransans-farsi-numbers/woff/IRANSansWeb(FaNum)_Light.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('fonts/iransans-farsi-numbers/ttf/IRANSansWeb(FaNum)_Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: IRANSans;
     font-style: normal;
     font-weight: 200;
-    src: url('css/fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_UltraLight.eot');
-    src: url('css/fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_UltraLight.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
-    url('css/fonts/iransans-farsi-numbers/woff2/IRANSansWeb(FaNum)_UltraLight.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
-    url('css/fonts/iransans-farsi-numbers/woff/IRANSansWeb(FaNum)_UltraLight.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url('css/fonts/iransans-farsi-numbers/ttf/IRANSansWeb(FaNum)_UltraLight.ttf') format('truetype');
+    src: url('fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_UltraLight.eot');
+    src: url('fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum)_UltraLight.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('fonts/iransans-farsi-numbers/woff2/IRANSansWeb(FaNum)_UltraLight.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('fonts/iransans-farsi-numbers/woff/IRANSansWeb(FaNum)_UltraLight.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('fonts/iransans-farsi-numbers/ttf/IRANSansWeb(FaNum)_UltraLight.ttf') format('truetype');
 }
 
 @font-face {
     font-family: IRANSans;
     font-style: normal;
     font-weight: normal;
-    src: url('css/fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum).eot');
-    src: url('css/fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'), /* IE6-8 */
-    url('css/fonts/iransans-farsi-numbers/woff2/IRANSansWeb(FaNum).woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
-    url('css/fonts/iransans-farsi-numbers/woff/IRANSansWeb(FaNum).woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url('css/fonts/iransans-farsi-numbers/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
+    src: url('fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum).eot');
+    src: url('fonts/iransans-farsi-numbers/eot/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('fonts/iransans-farsi-numbers/woff2/IRANSansWeb(FaNum).woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('fonts/iransans-farsi-numbers/woff/IRANSansWeb(FaNum).woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('fonts/iransans-farsi-numbers/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -272,7 +272,7 @@ nav.serv-navbar {
 }
 
 .area-logo img {
-    width: 9rem;
+    /*width: 2rem;*/
 }
 
 .item_widget_navbar a i {
@@ -324,6 +324,16 @@ nav.serv-navbar {
 
 .icon-shooping-cart, .icon-wishlist {
     position: relative;
+}
+
+.account-user.item_widget_navbar {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .account-user.item_widget_navbar {
+        display: block;
+    }
 }
 
 .cart-woocommerce-toogle {
@@ -1364,7 +1374,7 @@ span.star-icon i {
 }
 
 .area-footer.footer2 {
-    margin-top: 4rem;
+    /*margin-top: 4rem;*/
 }
 
 .area-content-footer {
@@ -1496,7 +1506,7 @@ a:hover span.tooltip-site {
 }
 
 .area-newsletter {
-    background: url(img/img55.png) no-repeat right bottom;
+    background: url(../assets/img/img55.png) no-repeat right bottom;
     background-size: cover;
     height: 180px;
 }
@@ -1729,7 +1739,7 @@ h2.title-post a:hover {
 }
 
 .area-breadcrumb-site {
-    background: url(img/imgheader.jpg) no-repeat center top;
+    background: url(../assets/img/imgheader.jpg) no-repeat center top;
     background-size: cover;
     height: 292px;
     background-attachment: fixed;

@@ -1,8 +1,793 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@section Head {
+	<link href="~/lib/owlcarousel/dist/css/owl.carousel.min.css" rel="stylesheet" />
+	<link href="~/lib/owlcarousel/dist/css/owl.theme.default.min.css" rel="stylesheet" />
+
+	<style>
+		#breadcrumb {
+			display: none;
+		}
+	</style>
+}
+
+@section Scripts {
+	<script src="~/lib/owlcarousel/dist/js/owl.carousel.min.js"></script>
+} 
+
+<section class="mb-5 ">
+	<div class="owl-carousel slider_baner-homepage" id="slider_header">
+		<div class="item_slider-baner-homepage slider-baner-image1">
+			<div class="content-slider ">
+				<h2 class=""> بهترین ماسک‌های صورت</h2>
+				<p class="description-slider d-none d-sm-block">
+					با کمترین قیمت خرید کن
+				</p>
+				<a href="shop-left-sidebar.html" class="btn-animate1">
+					خرید کنید<i class="fal fa-angle-left"></i>
+				</a>
+			</div>
+		</div>
+		<div class="item_slider-baner-homepage slider-baner-image2">
+			<div class="content-slider">
+				<h2 class="">محصولات مراقبت پوست</h2>
+				<p class="description-slider d-none d-sm-block">
+					با کمترین قیمت خرید کن
+				</p>
+				<a href="shop-left-sidebar.html" class="btn-animate1">
+					خرید کنید<i class="fal fa-angle-left"></i>
+				</a>
+			</div>
+		</div>
+		<div class="item_slider-baner-homepage slider-baner-image3">
+			<div class="content-slider">
+				<h2 class="">کلکسیون عطرهای مینیاتوری </h2>
+				<p class="description-slider d-none d-sm-block">
+					با کمترین قیمت خرید کن
+				</p>
+				<a href="shop-left-sidebar.html" class="btn-animate1">
+					خرید کنید<i class="fal fa-angle-left"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="mb-5 pb-sm-2 pb-md-3  pb-lg-4 pb-xl-5">
+	<div class="container">
+		<div class="row">
+			<div class=" col-6 col-md-3 col-element-multi ">
+				<div class="element-multi text-center ">
+					<div class="wow bounceIn icon-element-multi mb-1" data-wow-duration="2s">
+						<img src="~/assets/img/img31.svg" class="img-fluid" alt="ارسال سریع" />
+					</div>
+					<h3 class="title-element-multi">ارسال سریع</h3>
+				</div>
+			</div>
+			<div class="col-6  col-md-3 col-element-multi">
+				<div class="element-multi text-center">
+					<div class="wow bounceIn icon-element-multi mb-1" data-wow-duration="2s">
+						<img src="~/assets/img/img30.svg" class="img-fluid" alt="7 روز ضمانت بازگشت" />
+					</div>
+					<h3 class="title-element-multi">7 روز ضمانت بازگشت</h3>
+				</div>
+			</div>
+			<div class="col-6 col-md-3 col-element-multi  ">
+				<div class="element-multi text-center">
+					<div class="wow bounceIn icon-element-multi mb-1" data-wow-duration="2s">
+						<img src="~/assets/img/img33.svg" class="img-fluid" alt="ضمانت اصل بودن کالا" />
+					</div>
+					<h3 class="title-element-multi">ضمانت اصل بودن کالا</h3>
+				</div>
+			</div>
+			<div class="col-6  col-md-3 col-element-multi  ">
+				<div class="element-multi text-center">
+					<div class="wow bounceIn icon-element-multi mb-1" data-wow-duration="2s">
+						<img src="~/assets/img/img34.svg" class="img-fluid" alt="پشتیبانی 24 ساعته" />
+					</div>
+					<h3 class="title-element-multi">پشتیبانی 24 ساعته</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+<section class="mb-5 pb-sm-3  pb-lg-4 pb-xl-5">
+	<div class="container">
+		<div class="row ">
+			<div class="col-12 col-sm-6 col-md-4 col-category">
+				<div class="wow  bounceInRight box-category" data-wow-duration="2.5s">
+					<img src="img/imgteam2.jpg" class="img-fluid" alt="تصویر محصولات آرایشی " />
+					<div class="area-title-category">
+						<span class="title-category">محصولات آرایشی</span>
+					</div>
+					<a href="shop-left-sidebar.html">مشاهده دسته بندی</a>
+				</div>
+			</div>
+
+			<div class=" col-12 col-sm-6 col-md-4 col-category">
+				<div class="wow  flipInX box-category" data-wow-duration="2.5s">
+					<img src="img/imgteam3.jpg" class="img-fluid" alt="تصویر محصولات بهداشتی" />
+					<div class="area-title-category">
+						<span class="title-category">محصولات بهداشتی</span>
+					</div>
+					<a href="shop-left-sidebar.html">مشاهده دسته بندی</a>
+				</div>
+			</div>
+			<div class=" col-12 col-sm-6 col-md-4 col-category">
+				<div class="wow  bounceInLeft box-category" data-wow-duration="2.5s">
+					<img src="img/imgteam4.jpg" class="img-fluid" alt="تصویر محصولات مراقبتی" />
+					<div class="area-title-category">
+						<span class="title-category"> محصولات مراقبتی</span>
+					</div>
+					<a href="shop-left-sidebar.html">مشاهده دسته بندی</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="mb-2 mb-md-3  mb-lg-4 mb-xl-5">
+	<div class="container">
+		<div class="row justify-content-center mb-5">
+			<h2 class="wow fadeInUp title-site">
+				محصولات جدید
+				<span>محصولات جدید</span>
+			</h2>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="owl-carousel slider_product">
+					<div class="wow bounceIn item_slider_product-new" data-wow-duration="2s">
+						<div class="product_cart">
+							<div class="off"> <span>30% تخفیف</span></div>
+							<a href="#" class="link-wishlist-icon"><i class="fal fa-heart"></i></a>
+							<div class="cart-img-product mb-3">
+								<a href="#">
+									<div class="d-flex justify-content-center align-items-center h-100">
+										<img src="img/img1.jpg" class="img1-product img-fluid" />
+										<img src="img/img2.jpg" class="img2-product img-fluid" />
+									</div>
+								</a>
+								<div class="area-button-view-product">
+									<a href="shop-product-detail.html" class="button-view-product">
+										مشاهده
+										محصول
+									</a>
+									<a href="#" class="add-to-cart">
+										+
+									</a>
+								</div>
+							</div>
+							<div class="content_product text-center">
+								<div class="price_card_product mb-2">
+									<del class="ml-1">130000</del> 120000
+									تومان
+								</div>
+								<a href="#">
+									<h3 class="title-product mb-2">عنوان محصول </h3>
+								</a>
+								<div class="star_rating">
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon"><i class="far fa-star"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wow bounceIn item_slider_product-new" data-wow-duration="2s">
+						<div class="product_cart">
+
+							<a href="#" class="link-wishlist-icon"><i class="fal fa-heart"></i></a>
+							<div class="cart-img-product mb-3">
+								<a href="#">
+									<div class="d-flex justify-content-center align-items-center h-100">
+										<img src="img/img3.jpg" class="img1-product img-fluid" />
+										<img src="img/img4.jpg" class="img2-product img-fluid" />
+									</div>
+								</a>
+								<div class="area-button-view-product">
+									<a href="shop-product-detail.html" class="button-view-product">
+										مشاهده
+										محصول
+									</a>
+									<a href="#" class="add-to-cart">
+										+
+									</a>
+								</div>
+							</div>
+							<div class="content_product text-center">
+								<div class="price_card_product mb-2">
+									<del class="ml-1">70000</del> 60000
+									تومان
+								</div>
+								<a href="#">
+									<h3 class="title-product mb-2">عنوان محصول </h3>
+								</a>
+								<div class="star_rating">
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon "><i class="far fa-star"></i></span>
+									<span class="star-icon"><i class="far fa-star"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wow bounceIn item_slider_product-new" data-wow-duration="2s">
+						<div class="product_cart">
+							<div class="off"> <span>30% تخفیف</span></div>
+							<a href="#" class="link-wishlist-icon"><i class="fal fa-heart"></i></a>
+							<div class="cart-img-product mb-3">
+								<a href="#">
+									<div class="d-flex justify-content-center align-items-center h-100">
+										<img src="img/img5.jpg" class="img1-product img-fluid" />
+										<img src="img/img6.jpg" class="img2-product img-fluid" />
+									</div>
+								</a>
+								<div class="area-button-view-product">
+									<a href="shop-product-detail.html" class="button-view-product">
+										مشاهده
+										محصول
+									</a>
+									<a href="#" class="add-to-cart">
+										+
+									</a>
+								</div>
+							</div>
+							<div class="content_product text-center">
+								<div class="price_card_product mb-2">
+									<del class="ml-1">80000</del> 50000
+									تومان
+								</div>
+								<a href="#">
+									<h3 class="title-product mb-2">عنوان محصول </h3>
+								</a>
+								<div class="star_rating">
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon "><i class="far fa-star"></i></span>
+									<span class="star-icon "><i class="far fa-star"></i></span>
+									<span class="star-icon"><i class="far fa-star"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wow bounceIn item_slider_product-new" data-wow-duration="2s">
+						<div class="product_cart">
+							<a href="#" class="link-wishlist-icon"><i class="fal fa-heart"></i></a>
+							<div class="cart-img-product mb-3">
+								<a href="#">
+									<div class="d-flex justify-content-center align-items-center h-100">
+										<img src="img/img7.jpg" class="img1-product img-fluid" />
+										<img src="img/img8.jpg" class="img2-product img-fluid" />
+									</div>
+								</a>
+								<div class="area-button-view-product">
+									<a href="shop-product-detail.html" class="button-view-product">
+										مشاهده
+										محصول
+									</a>
+									<a href="#" class="add-to-cart">
+										+
+									</a>
+								</div>
+							</div>
+							<div class="content_product text-center">
+								<div class="price_card_product mb-2">
+									<del class="ml-1">100000</del> 99000
+									تومان
+								</div>
+								<a href="#">
+									<h3 class="title-product mb-2"> عنوان محصول </h3>
+								</a>
+								<div class="star_rating">
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wow bounceIn item_slider_product-new" data-wow-duration="2s">
+						<div class="product_cart">
+							<div class="off"> <span>30% تخفیف</span></div>
+							<a href="#" class="link-wishlist-icon"><i class="fal fa-heart"></i></a>
+							<div class="cart-img-product mb-3">
+								<a href="#">
+									<div class="d-flex justify-content-center align-items-center h-100">
+										<img src="img/img9.jpg" class="img1-product img-fluid" />
+										<img src="img/img10.jpg" class="img2-product img-fluid" />
+									</div>
+								</a>
+								<div class="area-button-view-product">
+									<a href="shop-product-detail.html" class="button-view-product">
+										مشاهده
+										محصول
+									</a>
+									<a href="#" class="add-to-cart">
+										+
+									</a>
+								</div>
+							</div>
+							<div class="content_product text-center">
+								<div class="price_card_product mb-2">
+									<del class="ml-1">150000</del> 110000
+									تومان
+								</div>
+								<a href="#">
+									<h3 class="title-product mb-2">
+										عنوان محصول
+									</h3>
+								</a>
+								<div class="star_rating">
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon"><i class="far fa-star"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="mb-4  mb-lg-5 pb-lg-4 pb-xl-5">
+	<div class="container">
+		<div class="row baner-site one">
+			<div class="wow rubberBand col-12 col-sm-6 col-lg-4 col-xl-3 item-baner" data-wow-duration="2s">
+				<div class="box-baner">
+					<a href="shop-left-sidebar.html">
+						<img class="img-fluid " src="img/img101.jpg"
+							 alt="بنر سایت" />
+					</a>
+				</div>
+			</div>
+			<div class="wow flipInX col-12 col-sm-6 col-lg-4 col-xl-3 item-baner" data-wow-duration="2s">
+				<div class="box-baner">
+					<a href="shop-left-sidebar.html">
+						<img class="img-fluid " src="img/img102.jpg"
+							 alt="بنر سایت" />
+					</a>
+				</div>
+			</div>
+			<div class="wow flipInX col-12 col-sm-6 col-lg-4 col-xl-3 item-baner" data-wow-duration="2s">
+				<div class="box-baner">
+					<a href="shop-left-sidebar.html">
+						<img class="img-fluid " src="img/img103.jpg"
+							 alt="بنر سایت" />
+					</a>
+				</div>
+			</div>
+			<div class="wow rubberBand col-12 col-sm-6 col-lg-4 col-xl-3 item-baner d-lg-none d-xl-block"
+				 data-wow-duration="2s">
+				<div class="box-baner">
+					<a href="shop-left-sidebar.html">
+						<img class="img-fluid " src="img/img104.jpg"
+							 alt="بنر سایت" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+<section class="mb-2 mb-md-3  mb-lg-4 mb-xl-5">
+	<div class="container">
+		<div class="row justify-content-center mb-5">
+			<h2 class="wow  fadeInUp title-site">
+				پر فروش ترین محصولات
+				<span>پر فروش ترین محصولات</span>
+			</h2>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="owl-carousel slider_product">
+					<div class="wow bounceIn item_slider_product-new" data-wow-duration="2s">
+						<div class="product_cart">
+							<div class="off"> <span>30% تخفیف</span></div>
+							<a href="#" class="link-wishlist-icon"><i class="fal fa-heart"></i></a>
+							<div class="cart-img-product mb-3">
+								<a href="#">
+									<div class="d-flex justify-content-center align-items-center h-100">
+										<img src="img/img11.jpg" class="img1-product img-fluid" />
+										<img src="img/img12.jpg" class="img2-product img-fluid" />
+									</div>
+								</a>
+								<div class="area-button-view-product">
+									<a href="shop-product-detail.html" class="button-view-product">
+										مشاهده
+										محصول
+									</a>
+									<a href="#" class="add-to-cart">
+										+
+									</a>
+								</div>
+							</div>
+							<div class="content_product text-center">
+								<div class="price_card_product mb-2">
+									<del class="ml-1">130000</del> 120000
+									تومان
+								</div>
+								<a href="#">
+									<h3 class="title-product mb-2">عنوان محصول </h3>
+								</a>
+								<div class="star_rating">
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon"><i class="far fa-star"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wow bounceIn item_slider_product-new" data-wow-duration="2s">
+						<div class="product_cart">
+							<a href="#" class="link-wishlist-icon"><i class="fal fa-heart"></i></a>
+							<div class="cart-img-product mb-3">
+								<a href="#">
+									<div class="d-flex justify-content-center align-items-center h-100">
+										<img src="img/img13.jpg" class="img1-product img-fluid" />
+										<img src="img/img14.jpg" class="img2-product img-fluid" />
+									</div>
+								</a>
+								<div class="area-button-view-product">
+									<a href="shop-product-detail.html" class="button-view-product">
+										مشاهده
+										محصول
+									</a>
+									<a href="#" class="add-to-cart">
+										+
+									</a>
+								</div>
+							</div>
+							<div class="content_product text-center">
+								<div class="price_card_product mb-2">
+									<del class="ml-1">70000</del> 60000
+									تومان
+								</div>
+								<a href="#">
+									<h3 class="title-product mb-2">عنوان محصول </h3>
+								</a>
+								<div class="star_rating">
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon "><i class="far fa-star"></i></span>
+									<span class="star-icon"><i class="far fa-star"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wow bounceIn item_slider_product-new" data-wow-duration="2s">
+						<div class="product_cart">
+							<div class="off"> <span>30% تخفیف</span></div>
+							<a href="#" class="link-wishlist-icon"><i class="fal fa-heart"></i></a>
+							<div class="cart-img-product mb-3">
+								<a href="#">
+									<div class="d-flex justify-content-center align-items-center h-100">
+										<img src="img/img15.jpg" class="img1-product img-fluid" />
+										<img src="img/img16.jpg" class="img2-product img-fluid" />
+									</div>
+								</a>
+								<div class="area-button-view-product">
+									<a href="shop-product-detail.html" class="button-view-product">
+										مشاهده
+										محصول
+									</a>
+									<a href="#" class="add-to-cart">
+										+
+									</a>
+								</div>
+							</div>
+							<div class="content_product text-center">
+								<div class="price_card_product mb-2">
+									<del class="ml-1">80000</del> 50000
+									تومان
+								</div>
+								<a href="#">
+									<h3 class="title-product mb-2"></h3>عنوان محصول </h3>
+								</a>
+								<div class="star_rating">
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon "><i class="far fa-star"></i></span>
+									<span class="star-icon "><i class="far fa-star"></i></span>
+									<span class="star-icon"><i class="far fa-star"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wow bounceIn item_slider_product-new" data-wow-duration="2s">
+						<div class="product_cart">
+							<a href="#" class="link-wishlist-icon"><i class="fal fa-heart"></i></a>
+							<div class="cart-img-product mb-3">
+								<a href="#">
+									<div class="d-flex justify-content-center align-items-center h-100">
+										<img src="img/img2.jpg" class="img1-product img-fluid" />
+										<img src="img/img1.jpg" class="img2-product img-fluid" />
+									</div>
+								</a>
+								<div class="area-button-view-product">
+									<a href="shop-product-detail.html" class="button-view-product">
+										مشاهده
+										محصول
+									</a>
+									<a href="#" class="add-to-cart">
+										+
+									</a>
+								</div>
+							</div>
+							<div class="content_product text-center">
+								<div class="price_card_product mb-2">
+									<del class="ml-1">100000</del> 99000
+									تومان
+								</div>
+								<a href="#">
+									<h3 class="title-product mb-2"> عنوان محصول </h3>
+								</a>
+								<div class="star_rating">
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wow bounceIn item_slider_product-new">
+						<div class="product_cart">
+							<div class="off"> <span>30% تخفیف</span></div>
+							<a href="#" class="link-wishlist-icon"><i class="fal fa-heart"></i></a>
+							<div class="cart-img-product mb-3">
+								<a href="#">
+									<div class="d-flex justify-content-center align-items-center h-100">
+										<img src="img/img4.jpg" class="img1-product img-fluid" />
+										<img src="img/img3.jpg" class="img2-product img-fluid" />
+									</div>
+								</a>
+								<div class="area-button-view-product">
+									<a href="shop-product-detail.html" class="button-view-product">
+										مشاهده
+										محصول
+									</a>
+									<a href="#" class="add-to-cart">
+										+
+									</a>
+								</div>
+							</div>
+							<div class="content_product text-center">
+								<div class="price_card_product mb-2">
+									<del class="ml-1">150000</del> 110000
+									تومان
+								</div>
+								<a href="#">
+									<h3 class="title-product mb-2">
+										عنوان محصول
+									</h3>
+								</a>
+								<div class="star_rating">
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon star-icon-active"><i class="far fa-star"></i></span>
+									<span class="star-icon"><i class="far fa-star"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="mb-2 mb-md-3  mb-lg-4 mb-xl-5">
+	<div class="container">
+		<div class="row justify-content-center mb-5">
+			<h2 class="wow fadeInUp title-site">
+				آخرین پست ها
+				<span>آخرین پست ها</span>
+			</h2>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="owl-carousel slider-Related-posts" id="Related-posts-slider">
+					<div class="wow  pulse item_slider-Related-posts" data-wow-duration="2s">
+						<div class="card card-post">
+							<div class="hover01 column">
+								<figure>
+									<img class="card-img-top" src="img/img60.jpg" alt="تصویر پست">
+								</figure>
+							</div>
+							<div class="card-body">
+								<div class="meta-post d-flex mb-3">
+									<div class="author-post  ml-3 item-meta-post">
+										<a href="#" class="mr-1"> محمد عوفی</a>
+									</div>
+									<div class="date-post item-meta-post  ml-3">
+										<a href="#" class="data-link">
+											21 شهریور 1399
+										</a>
+									</div>
+								</div>
+								<div class="content-post">
+									<h2 class="title-post mb-3">
+										<a href="single-left.html">
+											مهمترین نکات درباره
+											آرایش و میکاپ
+										</a>
+									</h2>
+									<p class="card-text mb-3">
+										للورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+										صنعت
+										چاپ، و
+										با
+										استفاده از طراحان گرافیک است.
+									</p>
+									<div class="btn-post-cart">
+										<a href="single-left.html">بیشتر بخوانید</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wow  pulse item_slider-Related-posts" data-wow-duration="2s">
+						<div class="card card-post">
+							<div class="hover01 column">
+								<figure>
+									<img class="card-img- img-fluid" src="img/img61.jpg" alt="تصویر پست" />
+								</figure>
+							</div>
+							<div class="card-body">
+								<div class="meta-post d-flex mb-3">
+									<div class="author-post item-meta-post  ml-3">
+										<a href="#" class="mr-1"> محمد عوفی</a>
+									</div>
+									<div class="date-post item-meta-post  ml-3">
+										<a href="#" class="data-link">
+											21 شهریور 1399
+										</a>
+									</div>
+								</div>
+								<div class="content-post">
+									<h2 class="title-post mb-3">
+										<a href="single-left.html">
+											روش های انتخاب لوازم
+											آرایش
+											مناسب
+										</a>
+									</h2>
+									<p class="card-text mb-3">
+										للورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+										صنعت
+										چاپ، و
+										با
+										استفاده از طراحان گرافیک است.
+									</p>
+									<div class="btn-post-cart">
+										<a href="single-left.html">بیشتر بخوانید</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wow  pulse item_slider-Related-posts" data-wow-duration="2s">
+						<div class="card card-post">
+							<div class="hover01 column">
+								<figure>
+									<img class="card-img-top img-fluid" src="img/img63.jpg" alt="تصویر پست" />
+								</figure>
+							</div>
+							<div class="card-body">
+								<div class="meta-post d-flex mb-3">
+									<div class="author-post item-meta-post ml-3">
+										<a href="#" class="mr-1"> محمد عوفی</a>
+									</div>
+									<div class="date-post item-meta-post  ml-3">
+										<a href="#" class="data-link">
+											21 شهریور 1399
+										</a>
+									</div>
+								</div>
+								<div class="content-post">
+									<h2 class="title-post mb-3">
+										<a href="single-left.html">
+											علل آلرژی به لوازم
+											آرایش و روش های
+											درمان آن
+										</a>
+									</h2>
+									<p class="card-text mb-3">
+										للورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+										صنعت
+										چاپ، و
+										با
+										استفاده از طراحان گرافیک است.
+									</p>
+									<div class="btn-post-cart">
+										<a href="single-left.html">بیشتر بخوانید</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wow  pulse item_slider-Related-posts" data-wow-duration="2s">
+						<div class="card card-post">
+							<div class="hover01 column">
+								<figure>
+									<img class="card-img-top img-fluid" src="img/img62.jpg" alt="تصویر پست" />
+								</figure>
+							</div>
+							<div class="card-body">
+								<div class="meta-post d-flex mb-3">
+									<div class="author-post item-meta-post  ml-3">
+										<a href="#" class="mr-1"> محمد عوفی</a>
+									</div>
+									<div class="date-post item-meta-post  ml-3">
+										<a href="#" class="data-link">
+											21 شهریور 1399
+										</a>
+									</div>
+								</div>
+								<div class="content-post">
+									<h2 class="title-post mb-3">
+										<a href="single-left.html">
+											نکات لازم برای خرید
+											لوازم آرایشی
+											بهداشتی
+										</a>
+									</h2>
+									<p class="card-text mb-3">
+										للورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+										صنعت
+										چاپ، و
+										با
+										استفاده از طراحان گرافیک است.
+									</p>
+									<div class="btn-post-cart">
+										<a href="single-left.html">بیشتر بخوانید</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="area-newsletter">
+		<div class="container d-flex align-items-center h-100 ">
+			<div class="row w-100">
+				<div class="col-12  d-flex  flex-column flex-xl-row align-items-center justify-content-center justify-content-xl-between">
+					<div class="title-newsletter mb-4 mb-xl-0 text-center">
+						با عضویت در خبرنامه شما می توانید از
+						مهمترین و بروزترین
+						اخبار
+						و اطلاعات روز ما با خبر شوید
+					</div>
+					<div class="newsletter-email">
+						<form method="post">
+							<div class="input-group">
+								<input type="email" name="email" id="email" class="form-control" placeholder="ایمیل شما">
+								<button type="submit"> <i class="far fa-envelope"></i></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

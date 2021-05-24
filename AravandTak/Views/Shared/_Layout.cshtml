@@ -1,49 +1,349 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - AravandTak</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AravandTak</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewData["Title"] - آروند تاک</title>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - AravandTak - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+	<link href="~/lib/bootstrap/dist/css/bootstrap-rtl.min.css" rel="stylesheet" />
+
+	<link href="~/css/style.css" rel="stylesheet" />
+	<link href="~/css/all.min.css" rel="stylesheet" />
+	<link href="~/css/respansive.css" rel="stylesheet" />
+	<link href="~/css/animate.min.css" rel="stylesheet" />
+
+	@RenderSection("Head", required: false)
+
+</head>
+<body class="contact">
+	<header>
+		<div class="topbar-site d-none d-lg-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<div class="d-flex align-items-center ">
+							<div class="email ">
+								<a href="mailto:contact@arvandtak.com">
+									<span>contact@arvandtak.com</span>
+									<i class="far fa-envelope"></i>
+								</a>
+							</div>
+							<div class="phone">
+								<a href="tel:09156522323">
+									<span>09156522323</span>
+									<i class="fal fa-phone-alt"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="d-flex align-items-center justify-content-end">
+							<div class="user-account d-none d-md-block">
+								<a href="#">
+									<span>حساب کاربری</span>
+									<i class="fal fa-user"></i>
+								</a>
+							</div>
+							<ul class="serv-socialicon d-flex align-items-center">
+								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+								@*<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>*@
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="serv-navbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-4 col-lg-2 order-2 order-lg-1 d-flex justify-content-center justify-content-lg-start">
+						<div class="area-logo">
+							<a href="/" class="d-inline-flex">
+								<img src="~/assets/img/logo-type.png" class="img-fluid" />
+								<img src="~/assets/img/logo.png" class="img-fluid" style="width:30px;" />
+							</a>
+						</div>
+					</div>
+					<div class="col-4 col-lg-8 order-1 order-lg-2 d-flex align-items-center">
+						<div class="main_menu h-100 d-none d-lg-block">
+							<ul class="d-flex h-100 align-items-center ">
+								<li>
+									<a href="/">صفحه اصلی</a>
+								</li>
+								<li>
+									<a href="index.html">درباره ما</a>
+								</li>
+								<li>
+									<a href="index.html">تماس با ما</a>
+								</li>
+								<li>
+									<a href="index.html">وبلاگ</a>
+								</li>
+							</ul>
+						</div>
+						<div class="icon_meni_bar">
+							<a class="d-block d-lg-none"><i class="fas fa-bars "></i></a>
+						</div>
+						<div id="menu_mobile" class="menu_mobile">
+							<div class="header_menu_mobile d-flex align-items-center">
+								<button type="button" class="close close_menu_mobile" aria-label="Close">
+									<span aria-hidden="true">×</span>
+								</button>
+								<div class="area-logo d-inline-flex">
+									<a href="/" class="d-inline-flex">
+										<img src="~/assets/img/logo-type.png" class="img-fluid" />
+										<img src="~/assets/img/logo.png" class="img-fluid" style="width:30px;" />
+									</a>
+								</div>
+							</div>
+							<div class="area_menu_mobile menu-top-menu-container" id="accordian">
+								<ul class="menu-multi-level">
+									<li>
+										<a href="/">صفحه اصلی</a>
+									</li>
+									<li>
+										<a href="index.html">درباره ما</a>
+									</li>
+									<li>
+										<a href="index.html">تماس با ما</a>
+									</li>
+									<li>
+										<a href="index.html">وبلاگ</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-4 col-lg-2 order-3 order-lg-3">
+						<div class="area-widget_navbar d-flex align-items-center justify-content-end h-100">
+							<div class="icon-shooping-cart item_widget_navbar">
+								<a href="#">
+									<i class="fal fa-shopping-cart"></i>
+									<span class="badge_count">0</span>
+								</a>
+								<div class="box-add-to-cart-header">
+									<div class="header-add-to-cart d-flex justify-content-between align-items-center">
+										<div class="count-product-addtocart">
+											<span>تعداد کالا :</span>
+											<span>2</span>
+										</div>
+										<div class="link-show-cart"><a href="#">مشاهده سبد خرید</a></div>
+									</div>
+									<div class="body-add-to-cart p-4">
+										<div class="row  mb-4">
+											<div class="col-10">
+												<div class="details_product_addtocart">
+													<div class="title_product_addtocart mb-2 d-flex justify-content-start">
+														محصول 1
+													</div>
+													<div class="d-flex justify-content-between align-items-center">
+														<div class="img_product_addtocart h-100 d-flex align-items-center">
+															<img class="img-fluid" src="img/img71.jpg" />
+														</div>
+														<div class="details_price_addtocart d-flex align-items-center">
+															<input name="input" type="number" value="1" class="ml-2">
+															<div class="price_product_addtocart d-flex align-items-center">
+																<span class="order-2"> 20000 تومان</span>
+																<span class="order-1 ml-2">x</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-2 d-flex align-items-center justify-content-center">
+												<div class="close_product_addtocart">
+													<a href="#" class="d-flex p-1">
+														<i class="fas fa-trash-alt"></i><span class="tooltip-site">حذف</span>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="row  mb-4">
+											<div class="col-10">
+												<div class="details_product_addtocart">
+													<div class="title_product_addtocart mb-2 d-flex justify-content-start">
+														محصول 2
+													</div>
+													<div class="d-flex justify-content-between align-items-center">
+														<div class="img_product_addtocart h-100 d-flex align-items-center">
+															<img class="img-fluid" src="img/img70.jpg" />
+														</div>
+														<div class="details_price_addtocart d-flex align-items-center">
+															<input name="input" type="number" value="1" class="ml-2">
+															<div class="price_product_addtocart d-flex align-items-center">
+																<span class="order-2"> 20000 تومان</span>
+																<span class="order-1 ml-2">x</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-2 d-flex align-items-center justify-content-center">
+												<div class="close_product_addtocart">
+													<a href="#" class="d-flex p-1">
+														<i class="fas fa-trash-alt"></i><span class="tooltip-site">حذف</span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="footer_addtocart d-flex flex-column align-items-center justify-content-center">
+										<div class="area_total_modal_addtocart mb-3  d-flex justify-content-between w-100">
+											<span>مجموع کل :</span>
+											<span> 250000 تومان</span>
+										</div>
+										<a href="#" class="btn btn-custom  btn-block btn-add-to-cart btn-animate1">
+											پرداخت
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="account-user item_widget_navbar">
+								<a href="/profile">
+									<i class="fal fa-user"></i>
+								</a>
+							</div>
+
+							@*<div class="area-widget-header-fixed d-block d-lg-none">
+									<div class="widget-header-fixed d-flex justify-content-between align-items-center">
+										<div class="account-user widget-header">
+											<a href="#" class="d-flex justify-content-center align-items-center">
+												<i class="fal fa-user"></i>
+											</a>
+										</div>
+									</div>
+								</div>*@
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<section class="mb-5 pb-sm-2 pb-md-3  pb-lg-4 pb-xl-5" id="breadcrumb">
+		<div class="area-breadcrumb-site">
+			<h1 class="text-center mb-3">@ViewData["title"]</h1>
+			<nav aria-label="breadcrumb" class="mb-4 mb-lg-3">
+				<ol class="breadcrumb breadcrumb-singleProduct ">
+					<li class="breadcrumb-item"><a href="/">خانه</a></li>
+					@RenderSection("BreadCrumb", required: false)
+					@*<li class="breadcrumb-item"><a href="#">صفحات</a></li>
+					<li class="breadcrumb-item active">404</li>*@
+				</ol>
+			</nav>
+		</div>
+	</section>
+	<main class="content">
+		@RenderBody()
+	</main>
+	<footer class="area-footer footer2">
+		<div class="area-content-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+						<div class="widget_footer">
+							<div class="title_widget_footer mb-3">
+								اطلاعات
+							</div>
+							<div class="contenet_widget_footer">
+								<ul>
+									<li><a href="#">درباره ما</a></li>
+									<li><a href="#">شرایط استفاده</a></li>
+									<li><a href="#">راهنمای سفارش و خرید</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+						<div class="widget_footer">
+							<div class="title_widget_footer mb-3">
+								حساب کاربری
+							</div>
+							<div class="contenet_widget_footer">
+								<ul>
+									<li><a href="#">سفارش های من</a></li>
+									<li><a href="#">لیست علاقه مندی ها</a></li>
+									<li><a href="#">پیگیری سفارش</a></li>
+									<li><a href="#">مشخصات کاربری من</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-sm-0">
+
+						<div class="widget_footer">
+							<div class="title_widget_footer mb-3">
+								خدمات
+							</div>
+							<div class="contenet_widget_footer">
+								<ul>
+									<li><a href="#">شرایط ارسال و عودت</a></li>
+									<li><a href="#">پرسش های متداول</a></li>
+									<li><a href="#">رعایت حریم خصوصی</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<div class="widget_footer">
+							<div class="title_widget_footer mb-3">
+								تماس با ما
+							</div>
+							<div class="contenet_widget_footer">
+								<ul class="mb-3">
+									<li>
+										<span> آدرس: ۴۴۵ کوه عدن جاده، کوه بهشت، اوکلند.</span>
+									</li>
+									<li>
+										<span> شماره تماس: 2135642512</span>
+									</li>
+									<li>
+										<span> ایمیل: digistore@exmple.com</span>
+									</li>
+								</ul>
+								<div class="area-socialIcon d-flex ">
+									<a href="http://www.facebook.com" class="icon facebook">
+										<span class="tooltip-site">Facebook</span>
+									</a>
+									<a href="http://www.github.com" class="icon instegram">
+										<span class="tooltip-site">instegram</span>
+									</a>
+									<a href="http://www.dribble.com" class="icon linkedin">
+										<span class="tooltip-site">linkedin</span>
+									</a>
+									<a href="http://www.twitter.com" class="icon twitter">
+										<span class="tooltip-site">Twitter</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="area-copyright  py-4 ">
+			<div class="container">
+				<div class="row justify-content-between align-items-center ">
+					<div class="col-12 col-sm-12">
+						<div class="copyright">
+							تمامی حقوق سایت محفوظ است
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<a class="scrollTo scroll-To-top " href=".topbar-site"></a>
+
+	<script src="~/lib/jquery/dist/jquery-3.5.0.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	@*<script src="~/js/site.js" asp-append-version="true"></script>*@
+	<script src="~/js/main.js"></script>
+	@RenderSection("Scripts", required: false)
+
 </body>
-</html>
+

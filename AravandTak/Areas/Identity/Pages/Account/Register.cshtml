@@ -1,67 +1,74 @@
 ﻿@page
 @model RegisterModel
+
 @{
-    ViewData["Title"] = "Register";
+	ViewData["Title"] = "ثبت نام";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@ViewData["Title"]</h1>
+@section BreadCrumb {
+	<li class="breadcrumb-item active">@ViewData["Title"]</li>
+}
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.ConfirmPassword"></label>
-                <input asp-for="Input.ConfirmPassword" class="form-control" />
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h4>Use another service to register.</h4>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>
-</div>
+<section class="mb-5 pb-sm-2 pb-md-3  pb-lg-4 pb-xl-5">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-sm-10 col-md-9 col-lg-8  col-xl-6">
+				<div class="register login-register-wrap">
+					<div class="area-form-register area-form-login-register  p-3 p-sm-4 p-md-5 ">
+						<h3 class="heading-style1 mb-3">ثبت نام</h3>
+						<form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+							<div asp-validation-summary="All" class="text-danger"></div>
+
+							<div class="form-group">
+								<label>نام <span class="text-danger ">*</span></label>
+								<input type="text" required placeholder="علی" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>نام کاربری <span class="text-danger ">*</span></label>
+								<input asp-for="Input.Email" type="text" required placeholder="example@yahoo.com" class="form-control">
+
+								<span asp-validation-for="Input.Email" class="text-danger"></span>
+							</div>
+							<div class="form-group mb-3">
+								<label asp-for="Input.Password">کلمه عبور <span class="text-danger">*</span></label>
+								<input asp-for="Input.Password" class="form-control input-password" placeholder="کلمه عبور" />
+								<span asp-validation-for="Input.Password" class="text-danger"></span>
+							</div>
+							<div class="form-group mb-3">
+								<label asp-for="Input.ConfirmPassword">تکرار رمز عبور</label>
+								<input asp-for="Input.ConfirmPassword" class="form-control input-password" placeholder="تایید کلمه عبور" />
+								<span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+							</div>
+
+							<div class="form-check form-check-custom ">
+								<label class="checkbox-container">
+									من با شرایط و سیاست موافقم.
+									<input type="checkbox" required>
+									<span class="checkmark"></span>
+								</label>
+							</div>
+
+							<button type="submit" class="btn-animate1 mt-4">ثبت نام</button>
+
+							<div class="form-note mt-4">
+								حساب کاربری دارید؟ <a href="login.html">وارد شوید</a>
+							</div>
+						</form>
+					</div>
+					<div class="footer-login">
+						<div class="area-socialIcon socialIcon-bg-secondary d-flex justify-content-center">
+							<a href="http://www.github.com" class="icon instegram">
+								<span class="tooltip-site">اینستاگرام</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+	<partial name="_ValidationScriptsPartial" />
 }
