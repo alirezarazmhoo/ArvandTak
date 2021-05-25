@@ -25,10 +25,19 @@
 								<input type="text" required placeholder="علی" class="form-control">
 							</div>
 							<div class="form-group">
-								<label>نام کاربری <span class="text-danger ">*</span></label>
-								<input asp-for="Input.Email" type="text" required placeholder="example@yahoo.com" class="form-control">
-
-								<span asp-validation-for="Input.Email" class="text-danger"></span>
+								<label asp-for="Input.FirstName">نام <span class="text-danger ">*</span></label>
+								<input asp-for="Input.FirstName" type="text" required placeholder="نام خود را کنید" class="form-control">
+								<span asp-validation-for="Input.FirstName" class="text-danger"></span>
+							</div>
+							<div class="form-group">
+								<label asp-for="Input.LastName">نام خانوادگی <span class="text-danger">*</span></label>
+								<input asp-for="Input.LastName" type="text" required placeholder="نام و نام خانوادگی" class="form-control">
+								<span asp-validation-for="Input.LastName" class="text-danger"></span>
+							</div>
+							<div class="form-group">
+								<label asp-for="Input.PhoneNumber">موبایل <span class="text-danger">*</span></label>
+								<input asp-for="Input.PhoneNumber" type="text" required placeholder="نمونه: 09131112233" class="form-control">
+								<span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
 							</div>
 							<div class="form-group mb-3">
 								<label asp-for="Input.Password">کلمه عبور <span class="text-danger">*</span></label>
@@ -37,8 +46,26 @@
 							</div>
 							<div class="form-group mb-3">
 								<label asp-for="Input.ConfirmPassword">تکرار رمز عبور</label>
-								<input asp-for="Input.ConfirmPassword" class="form-control input-password" placeholder="تایید کلمه عبور" />
+								<input asp-for="Input.ConfirmPassword" type="text" class="form-control input-password" placeholder="تایید کلمه عبور" />
 								<span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+							</div>
+
+							<div class="form-group">
+								<label asp-for="Input.RefferalCode">معرف </label>
+								<input asp-for="Input.RefferalCode" type="text" required placeholder="کد معرف خود را وارد کنید" class="form-control">
+								<span asp-validation-for="Input.RefferalCode" class="text-danger"></span>
+							</div>
+
+							<div class="form-group">
+								<label asp-for="Input.Address">نشانی <span class="text-danger">*</span></label>
+								<textarea asp-for="Input.Address" required class="form-control"></textarea>
+								<span asp-validation-for="Input.Address" class="text-danger"></span>
+							</div>
+
+							<div class="form-group">
+								<label asp-for="Input.PostalCode">کد پستی</label>
+								<input asp-for="Input.PostalCode" type="text" required placeholder="کد پستی نشانی قید شده را وارد کنید" class="form-control">
+								<span asp-validation-for="Input.PostalCode" class="text-danger"></span>
 							</div>
 
 							<div class="form-check form-check-custom ">

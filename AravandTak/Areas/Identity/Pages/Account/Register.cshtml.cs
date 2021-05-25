@@ -45,22 +45,41 @@ namespace AravandTak.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
-            [Display(Name = "Email")]
-            public string Email { get; set; }
+            [Required(ErrorMessage = "نام را وارد کنید")]
+            [Display(Name = "نام")]
+            public string FirstName { get; set; }
+            
+            [Required(ErrorMessage = "نام خانوادگی را وارد کنید")]
+            [Display(Name = "نام خانوادگی")]
+            public string LastName { get; set; }
+
+            [Required(ErrorMessage = "موبایل را وارد کنید")]
+            [Display(Name = "موبایل")]
+            public long PhoneNumber { get; set; }
+
+            [Remote("index", "RefferalUserExists", ErrorMessage = "کد معرف معتبر نمی باشد")]
+            [Display(Name = "کد معرف")]
+            public string RefferalCode { get; set; }
 
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "{0} باید بین {2} و {1} باشد.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "رمز عبور")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Display(Name = "تکرار رمز")]
+            [Compare("Password", ErrorMessage = "رمز و تکرار آن تطابق ندارد")]
             public string ConfirmPassword { get; set; }
-        }
+
+            [Required]
+            [StringLength(100, ErrorMessage = "{0} باید بین {2} و {1} باشد.", MinimumLength = 6)]
+            [DataType(DataType.Password)]
+            [Display(Name = "رمز عبور")]
+            public string Address { get; set; }
+            [Display(Name = "کد پستی")]
+            public long? PostalCode { get; set; }
+		}
 
         public async Task OnGetAsync(string returnUrl = null)
         {
