@@ -15,8 +15,6 @@ namespace AravandTak.Models
 		public string LastName { get; set; }
 		public string RefferalUserId { get; set; }
 		[Required]
-		public int AddressId { get; set; }
-		[Required]
 		public string Code { get; set; }
 
 		public virtual ICollection<Address> Addresses { get; set; }

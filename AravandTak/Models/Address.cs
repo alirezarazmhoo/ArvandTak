@@ -11,6 +11,8 @@ namespace AravandTak.Models
 		[Column(TypeName = "NVARCHAR(500)")]
 		public string Line1 { get; set; }
 		public long? PostalCode { get; set; }
+		[Required]
+		public string UserId { get; set; }
 
 		public virtual ArvandTakUser User { get; set; }
 	}

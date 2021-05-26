@@ -1,5 +1,6 @@
 ﻿using AravandTak.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AravandTak.Controllers
 {

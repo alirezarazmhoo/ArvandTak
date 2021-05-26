@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AravandTak.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210525073809_AddAddressAndRefferalUser")]
-    partial class AddAddressAndRefferalUser
+    [Migration("20210525100938_AddRefferalUserAndAddress")]
+    partial class AddRefferalUserAndAddress
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,6 +36,7 @@ namespace AravandTak.Data.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -51,9 +52,6 @@ namespace AravandTak.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AddressId")
                         .HasColumnType("int");
 
                     b.Property<string>("Code")
@@ -128,6 +126,28 @@ namespace AravandTak.Data.Migrations
                     b.HasIndex("RefferalUserId");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "02174cf0–9412–4cfe-afbf-59f706d72cf6",
+                            AccessFailedCount = 0,
+                            Code = "111",
+                            ConcurrencyStamp = "f69e80c3-4ecc-4daf-a4c0-13ee92414ddc",
+                            Email = "mainadmin@email.com",
+                            EmailConfirmed = true,
+                            FirstName = "ساره",
+                            LastName = "صفری",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "mainadmin@email.com",
+                            NormalizedUserName = "mainadmin",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKLtSr6JUAN1kNikyoTP9dAdc3r+G5+5Ul0YFM900NWfkNPRvhuZ9ycaaRGNHeQi3w==",
+                            PhoneNumber = "09388244318",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "4ce767b7-1d82-4f9e-b1c8-4344545cf99e",
+                            TwoFactorEnabled = false,
+                            UserName = "mainadmin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -155,6 +175,22 @@ namespace AravandTak.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "341743f0-asd2–42de-afbf-59kmkkmk72cf6",
+                            ConcurrencyStamp = "341743f0-asd2–42de-afbf-59kmkkmk72cf6",
+                            Name = "admin",
+                            NormalizedName = "admin"
+                        },
+                        new
+                        {
+                            Id = "20df3014-a5e0-4f94-bf15-11685f5f9a85",
+                            ConcurrencyStamp = "20df3014-a5e0-4f94-bf15-11685f5f9a85",
+                            Name = "customer",
+                            NormalizedName = "customer"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -242,6 +278,13 @@ namespace AravandTak.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "02174cf0–9412–4cfe-afbf-59f706d72cf6",
+                            RoleId = "341743f0-asd2–42de-afbf-59kmkkmk72cf6"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -269,7 +312,9 @@ namespace AravandTak.Data.Migrations
                 {
                     b.HasOne("AravandTak.Models.ArvandTakUser", "User")
                         .WithMany("Addresses")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("AravandTak.Models.ArvandTakUser", b =>

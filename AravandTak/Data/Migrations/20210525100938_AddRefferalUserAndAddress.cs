@@ -2,16 +2,10 @@
 
 namespace AravandTak.Data.Migrations
 {
-    public partial class AddAddressAndRefferalUser : Migration
+    public partial class AddRefferalUserAndAddress : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "AddressId",
-                table: "AspNetUsers",
-                nullable: false,
-                defaultValue: 0);
-
             migrationBuilder.AddColumn<string>(
                 name: "Code",
                 table: "AspNetUsers",
@@ -45,7 +39,7 @@ namespace AravandTak.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Line1 = table.Column<string>(type: "NVARCHAR(500)", nullable: false),
                     PostalCode = table.Column<long>(nullable: true),
-                    UserId = table.Column<string>(nullable: true)
+                    UserId = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -55,8 +49,28 @@ namespace AravandTak.Data.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "341743f0-asd2–42de-afbf-59kmkkmk72cf6", "341743f0-asd2–42de-afbf-59kmkkmk72cf6", "admin", "admin" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "20df3014-a5e0-4f94-bf15-11685f5f9a85", "20df3014-a5e0-4f94-bf15-11685f5f9a85", "customer", "customer" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "Code", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "RefferalUserId", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "02174cf0–9412–4cfe-afbf-59f706d72cf6", 0, "111", "f69e80c3-4ecc-4daf-a4c0-13ee92414ddc", "mainadmin@email.com", true, "ساره", "صفری", false, null, "mainadmin@email.com", "mainadmin", "AQAAAAEAACcQAAAAEKLtSr6JUAN1kNikyoTP9dAdc3r+G5+5Ul0YFM900NWfkNPRvhuZ9ycaaRGNHeQi3w==", "09388244318", false, null, "4ce767b7-1d82-4f9e-b1c8-4344545cf99e", false, "mainadmin" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "UserId", "RoleId" },
+                values: new object[] { "02174cf0–9412–4cfe-afbf-59f706d72cf6", "341743f0-asd2–42de-afbf-59kmkkmk72cf6" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUsers_RefferalUserId",
@@ -90,9 +104,25 @@ namespace AravandTak.Data.Migrations
                 name: "IX_AspNetUsers_RefferalUserId",
                 table: "AspNetUsers");
 
-            migrationBuilder.DropColumn(
-                name: "AddressId",
-                table: "AspNetUsers");
+            migrationBuilder.DeleteData(
+                table: "AspNetRoles",
+                keyColumn: "Id",
+                keyValue: "20df3014-a5e0-4f94-bf15-11685f5f9a85");
+
+            migrationBuilder.DeleteData(
+                table: "AspNetUserRoles",
+                keyColumns: new[] { "UserId", "RoleId" },
+                keyValues: new object[] { "02174cf0–9412–4cfe-afbf-59f706d72cf6", "341743f0-asd2–42de-afbf-59kmkkmk72cf6" });
+
+            migrationBuilder.DeleteData(
+                table: "AspNetRoles",
+                keyColumn: "Id",
+                keyValue: "341743f0-asd2–42de-afbf-59kmkkmk72cf6");
+
+            migrationBuilder.DeleteData(
+                table: "AspNetUsers",
+                keyColumn: "Id",
+                keyValue: "02174cf0–9412–4cfe-afbf-59f706d72cf6");
 
             migrationBuilder.DropColumn(
                 name: "Code",
