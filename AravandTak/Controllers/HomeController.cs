@@ -18,11 +18,22 @@ namespace AravandTak.Controllers
 			_logger = logger;
 		}
 
+		[HttpGet]
 		public IActionResult Index()
 		{
 			return View();
 		}
-
+		[HttpGet]
+		public IActionResult About() 
+		{
+			return View();
+		}
+		[HttpGet]
+		public IActionResult Contact() 
+		{
+			return View();
+		}
+		[HttpGet]
 		public IActionResult Privacy()
 		{
 			return View();

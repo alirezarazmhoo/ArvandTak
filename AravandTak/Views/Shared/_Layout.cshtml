@@ -73,13 +73,13 @@
 									<a href="/">صفحه اصلی</a>
 								</li>
 								<li>
-									<a href="index.html">درباره ما</a>
+									<a asp-action="about" asp-controller="home">درباره ما</a>
 								</li>
 								<li>
-									<a href="index.html">تماس با ما</a>
+									<a asp-action="contact" asp-controller="home">تماس با ما</a>
 								</li>
 								<li>
-									<a href="index.html">وبلاگ</a>
+									<a href="#">وبلاگ</a>
 								</li>
 							</ul>
 						</div>
@@ -104,10 +104,10 @@
 										<a href="/">صفحه اصلی</a>
 									</li>
 									<li>
-										<a href="index.html">درباره ما</a>
+										<a  asp-action="about" asp-controller="home">درباره ما</a>
 									</li>
 									<li>
-										<a href="index.html">تماس با ما</a>
+										<a  asp-action="contact" asp-controller="home">تماس با ما</a>
 									</li>
 									<li>
 										<a href="index.html">وبلاگ</a>
@@ -250,7 +250,7 @@
 							</div>
 							<div class="contenet_widget_footer">
 								<ul>
-									<li><a href="#">درباره ما</a></li>
+									<li><a asp-action="about" asp-controller="home">درباره ما</a></li>
 									<li><a href="#">شرایط استفاده</a></li>
 									<li><a href="#">راهنمای سفارش و خرید</a></li>
 								</ul>

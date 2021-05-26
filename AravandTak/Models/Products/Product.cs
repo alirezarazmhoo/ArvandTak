@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AravandTak.Models
+namespace AravandTak.Models.Products
 {
 	public class Product
 	{
 		private static readonly char delimiter = ',';
-		private string _tags;
+		//private string _tags;
 
 		[Key]
 		public Guid Id { get; set; }
@@ -21,15 +22,18 @@ namespace AravandTak.Models
 		[Column(TypeName = "NVARCHAR(255)")]
 		public string FeatureImage { get; set; }
 
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public string Tags { get; set; }
 		[NotMapped]
-		public string[] Tags
+		public string[] TagCollection
 		{
-			get => _tags.Split(delimiter);
+			get => Tags.Split(delimiter);
 			set
 			{
-				string.Join($"{delimiter}", value);
+				Tags = string.Join($"{delimiter}", value);
 			}
 		}
+		
 		[Column(TypeName = "NTEXT")]
 		public string Description { get; set; }
 
@@ -38,6 +42,7 @@ namespace AravandTak.Models
 
 		public virtual ICollection<ProductAttribute> Attributes { get; set; }
 		public virtual ICollection<ProductGallery> Galleries { get; set; }
+		public virtual ICollection<ProductSpecification> Specifications { get; set; }
 
 	}
 }

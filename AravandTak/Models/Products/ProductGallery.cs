@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AravandTak.Models
+namespace AravandTak.Models.Products
 {
 	public class ProductGallery
 	{

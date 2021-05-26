@@ -17,6 +17,12 @@
     <Compile Remove="Data\Migrations\20210525094914_AddRefferalUserAndAddress.Designer.cs" />
     <Compile Remove="Data\Migrations\20210525100501_FixError.cs" />
     <Compile Remove="Data\Migrations\20210525100501_FixError.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210526062034_AddProductTable.cs" />
+    <Compile Remove="Data\Migrations\20210526062034_AddProductTable.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210526062219_AddProductTable.cs" />
+    <Compile Remove="Data\Migrations\20210526062219_AddProductTable.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210526064409_AddProductTable.cs" />
+    <Compile Remove="Data\Migrations\20210526064409_AddProductTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,7 +40,7 @@
 
   <ItemGroup>
     <Folder Include="Extensions\" />
-    <Folder Include="wwwroot\storage\" />
+    <Folder Include="wwwroot\assets\img\home\" />
   </ItemGroup>
 
 </Project>
