@@ -1,0 +1,163 @@
+﻿@model System.Collections.Generic.IList<AravandTak.Models.ViewModels.CartItemViewModel>
+@{
+	ViewData["Title"] = "سبد خرید";
+}
+@section Scripts {
+	<script type="text/javascript">
+		function sumPrice_changed(value) {
+			
+		}
+	</script>
+}
+@section BreadCrumb {
+	<li class="breadcrumb-item active">@ViewData["Title"]</li>
+}
+
+<section class="mb-5 pb-sm-2 pb-md-3  pb-lg-4 pb-xl-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-xl-8">
+				<div class="area-table-cart-shop area-table-shop mb-5">
+					<table class="table table-shop">
+						<thead>
+							<tr>
+								<th scope="col">حذف</th>
+								<th scope="col">تصویر</th>
+								<th scope="col">محصول</th>
+								<th scope="col"> قیمت (تومان)</th>
+								<th scope="col">تعداد</th>
+								<th scope="col"> جمع</th>
+							</tr>
+						</thead>
+						<tbody>
+							@if (Model.Count > 0)
+							{
+								foreach (var item in Model)
+								{
+									<tr>
+										<td>
+
+											<a href="#" class="remove-product">
+												<i class="fal fa-times"></i>
+											</a>
+										</td>
+
+										<td>
+
+											<div class="product-thumbnail">
+												<a href="/products/detail/@item.ProductId"><img src="@item.FeatureImage"></a>
+											</div>
+
+										</td>
+										<td>
+											<div class="name-product">
+												<a href="/products/detail/@item.ProductId">
+													<h3>@item.Title</h3>
+												</a>
+											</div>
+
+										</td>
+
+										<td class="cell-product-price">
+											<div class="product-price">
+												@item.Price
+											</div>
+										</td>
+
+										<td>
+											<div class="input-number-wrapper d-flex justify-content-center align-items-center">
+												<span class="quanti-invitati-op increase">+</span>
+												<input class="input-number-custtom" type="text" value="@item.Number">
+												<span class="quanti-invitati-op decrease">-</span>
+											</div>
+										</td>
+
+										<td>
+											<div class="product-subtotal">
+												<span>
+													@item.SumPrice
+													<input type="hidden" value="@item.SumPrice" onchange="sumPrice_changed(this.value)" />
+												</span>
+
+											</div>
+										</td>
+
+									</tr>
+									@*<tr>
+										<td colspan="6" class="actions">
+											<div class="footer-table-cart d-flex flex-column flex-md-row align-items-center">
+												<div class="area-coupon ml-0  ml-md-2 mb-4 mb-md-0">
+													<form class="form-row align-items-center justify-content-between">
+
+														<div class="form-group coupon d-flex mb-0 align-items-center">
+															<label class="ml-2" for="input-coupon">کوپن: </label>
+															<input type="text" class="form-control ml-2" id="input-coupon" placeholder="کد تخفیف">
+														</div>
+
+														<button type="submit" class="btn-animate1 ml-0  ml-md-2">
+															اعمال
+															کوپن
+														</button>
+													</form>
+
+												</div>
+
+												<div class="area-btn-update area-btn-animate-S2">
+													<button type="submit" class="btn-animate1">
+														بروزرسانی سبد
+														خرید
+													</button>
+												</div>
+											</div>
+
+										</td>
+									</tr>*@
+								}
+							}
+							else
+							{
+								<tr>
+									<td>هنوز محصولی به سبد خریدتان اضافه نکرده اید.</td>
+								</tr>
+							}
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="col-12 col-xl-4">
+				<div class="box-cart-total ">
+					<h2>جمع سبد خرید</h2>
+					<div class="details-cart-total">
+						<div class="cart-subtotal d-flex justify-content-between align-items-center  mb-4">
+							<span>مجموع</span>
+							@{
+								var totalPrice = Model.Sum(s => s.Number * s.Price);
+							}
+							<span id="allSumPriceSpan" class="subtotal">@totalPrice</span>
+							<span>تومان</span>
+						</div>
+						<hr>
+						<div class="cart-shipping d-flex justify-content-between align-items-center  mb-4">
+							<span>هزینه ارسال</span>
+
+							<span class="subtotal"> رایگان</span>
+						</div>
+						<hr>
+						<div class="cart-total  d-flex justify-content-between align-items-center mb-4">
+							<span> مجموع کل سبد خرید</span>
+
+							<span id="footerSumPrice" class="payable">@totalPrice</span>
+							<span>تومان</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="area-btn-checkout  mt-4">
+					<button type="submit" class="btn-animate1 border-0">ادامه جهت تسویه حساب</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace AravandTak
 {
@@ -45,6 +46,12 @@ namespace AravandTak
 
 			services.AddControllersWithViews();
 
+			services.AddSession(option =>
+			{
+				option.IdleTimeout = TimeSpan.FromMinutes(100);
+				option.Cookie.HttpOnly = false;
+			});
+
 			services.AddRazorPages();
 		}
 
@@ -64,6 +71,8 @@ namespace AravandTak
 			}
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
+
+			app.UseSession();
 
 			app.UseRouting();
 
