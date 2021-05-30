@@ -26,10 +26,44 @@ namespace AravandTak.Controllers.Products
 
 			if (!exists) return NotFound();
 
+			#region Product With Many Attributes Query
+			//var productDetail = await
+			//	DbContext.Products
+			//		.Select(s => new ProductDetailQuery
+			//		{
+			//			Id = s.Id,
+			//			Title = s.Title,
+			//			Code = s.Code,
+			//			FeatureImage = s.FeatureImage,
+			//			Tags = s.TagCollection,
+			//			Description = s.Description,
+			//			// galleries
+			//			Galleries = s.Galleries.Select(x => x.Path).ToArray(),
+			//			// attributes
+			//			Attributes =
+			//				s.Attributes
+			//					.OrderBy(x => x.Packing)
+			//					.Select(x => new ProductDetailAttributeViewModel
+			//					{
+			//						Id = x.Id,
+			//						Title = x.Title,
+			//						IsAvailable = x.IsAvailable,
+			//						Price = x.Price,
+			//						Colors = x.ColorCollection
+			//					})
+			//					.Where(w => w.IsAvailable),
+			//			// specifications
+			//			Specifications =
+			//				s.Specifications
+			//					.Select(x => new ProductDetailSpecificationViewModel { Key = x.Key, Value = x.Value })
+			//		})
+			//		.FirstOrDefaultAsync(f => f.Id == id);
+			#endregion
+
 			// get prodcut detail
 			var productDetail = await
 				DbContext.Products
-					.Select(s => new ProductDetailQuery
+					.Select(s => new ProductDetailSingleAttributeQuery
 					{
 						Id = s.Id,
 						Title = s.Title,
@@ -40,7 +74,7 @@ namespace AravandTak.Controllers.Products
 						// galleries
 						Galleries = s.Galleries.Select(x => x.Path).ToArray(),
 						// attributes
-						Attributes =
+						Attribute =
 							s.Attributes
 								.OrderBy(x => x.Packing)
 								.Select(x => new ProductDetailAttributeViewModel
@@ -50,7 +84,8 @@ namespace AravandTak.Controllers.Products
 									IsAvailable = x.IsAvailable,
 									Price = x.Price,
 									Colors = x.ColorCollection
-								}),
+								})
+								.FirstOrDefault(w => w.IsAvailable),
 						// specifications
 						Specifications =
 							s.Specifications
@@ -73,7 +108,7 @@ namespace AravandTak.Controllers.Products
 				.ToListAsync();
 
 			// create moder and pass to view
-			var model = new ProductDetailViewModel
+			var model = new SimpleProductDetailViewModel
 			{
 				ProductDetail = productDetail,
 				RelatedProducts = relatedProducts

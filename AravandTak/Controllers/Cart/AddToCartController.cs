@@ -3,7 +3,6 @@ using AravandTak.Helpers;
 using AravandTak.Models.Cart;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace AravandTak.Controllers.Cart
@@ -11,34 +10,11 @@ namespace AravandTak.Controllers.Cart
 	[Route("cart")]
 	public class AddToCartController : BaseController
 	{
-		private readonly IList<CartItem> _items;
-
 		public AddToCartController(ApplicationDbContext dbContext) : base(dbContext)
 		{
-			_items = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
-
-			if (_items == null)
-			{
-				List<CartItem> items = new List<CartItem>();
-				// create empty list
-				SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", items);
-				// add created empty list to items
-				_items = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "cart");
-			}
 		}
 
-		private int FindItemIndex(CartItem item)
-		{
-			for (int i = 0; i < _items.Count; i++)
-			{
-				if (_items[i].ProductAttributeId == item.ProductAttributeId)
-				{
-					return i;
-				}
-			}
-
-			return -1;
-		}
+		
 		private void AddItem(Guid productAttributeId, int number, string color)
 		{
 			var item = new CartItem
@@ -48,9 +24,9 @@ namespace AravandTak.Controllers.Cart
 				Color = color
 			};
 
-			_items.Add(item);
+			CartItems.Add(item);
 
-			SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", _items);
+			SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", CartItems);
 		}
 
 
@@ -59,6 +35,10 @@ namespace AravandTak.Controllers.Cart
 		[AutoValidateAntiforgeryToken]
 		public IActionResult Store(CartItem item)
 		{
+			InitialCart();
+
+			item.Color = string.IsNullOrEmpty(item.Color) ? CartItem.DefaultColor : item.Color;
+
 			// check selected item is valid
 			var productAttr = DbContext.ProductAttributes.FirstOrDefault(f => f.Id == item.ProductAttributeId);
 			if (productAttr == null) return NotFound();
@@ -76,10 +56,11 @@ namespace AravandTak.Controllers.Cart
 			try
 			{
 				// save to session
-				int index = FindItemIndex(item);
+				int index = FindCartItemIndex(item.ProductAttributeId);
 				if (index != -1)
 				{
-					_items[index].Number += item.Number;
+					CartItems[index].Number += item.Number;
+					SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", CartItems);
 				}
 				else
 				{
@@ -87,7 +68,7 @@ namespace AravandTak.Controllers.Cart
 				}
 
 				// redirect to cart list page
-				return RedirectToAction("Index");
+				return RedirectToAction("index", "OrderList");
 
 			}
 			catch (System.Exception)
